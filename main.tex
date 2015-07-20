@@ -1332,7 +1332,6 @@ Sei $B=\{b_1, \dots, b_n\}$ Basis von $V_j ~~~ C:= \{c_1, \dots, c_m\}$ Basis vo
 \end{itemize}
 \end{enumerate}
 
-\newpage
 \subsection{Basiswechselmatrix $S_{C,B}$}
 
 \begin{Def}
@@ -1443,8 +1442,6 @@ $
 \[det (A) = \sum_{i=1}^{n} (-1)^{i+j} \cdot a_{ij} \cdot det(A_{ij}) \]
 \end{itemize}
 
-\subsection{Eigenwerte und Eigenvektoren}
-
 
 \subsection{Kern einer Abbildung}
 
@@ -1471,6 +1468,19 @@ Abbildung \(\varphi: x \rightarrow Ax\)
         Kern(A) &= \left\{ \begin{pmatrix} -2 \\ -4 \\ 1 \\ 0 \end{pmatrix}, \begin{pmatrix} -1 \\ 1 \\ 0 \\ 1 \end{pmatrix} \right\}
     \end{align*}
 \end{Beispiel}
+
+\subsection{Gramm-Schmidsches Orthogonalisierungs-Verfahren}
+Eingabe: $U$ UVR \(U = \left< v_1, v_2, ..., v_n \right>\)\\
+Ausgabe: Orthonormalbasis \(\{u_1, u_2, ..., u_m\}\) von \(U\)
+
+\begin{enumerate}[label={(\arabic*)}]
+\item Setze $m := 0$
+\item Für $i = 1, ..., k$ führe (3) und (4) aus
+\item Setze $w_i = v_i - \sum_{j = 1}^m \left< u_j, v_j \right> \cdot u_j$
+\item Falls $w_i \neq 0$, setze $m = m + 1$ und $u_m = \frac{1}{|w_i|} \cdot w_i$\\
+($u_m$ ist jetzt normiert, da $|u_m| = \frac{|w_i|}{|w_i|} = 1$)
+\end{enumerate}
+
 
 \section{Abkürzungen}
 
