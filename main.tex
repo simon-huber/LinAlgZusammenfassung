@@ -593,7 +593,7 @@ d(c,c') := w(c - c') = \Big| \Big\{ i \in \{ 1, ..., n \} \Big| c_i \neq c'_i \B
 und gibt die Anzahl der unterschidelichen Stellen in den Codewörten an.\\
 Für den Code $C$ ist der Hamming-Abstand definiert durch
 \begin{align*}
-d(C) := min\Big\{ d(c, c') \Big| c, c' \in C, c \neq c' \Big\} = min w(c), c \in C \setminus \{0\}
+d(C) := min\Big\{ d(c, c') \Big| c, c' \in C, c \neq c' \Big\} = min \{w(c) | c \in C \setminus \{0\}\}
 \end{align*}
 \end{Def}
 
@@ -892,7 +892,7 @@ A = A^T
         \item direkt alle Elemente ablesen, falls möglich
         \item 
             \begin{itemize}
-            \item Gleichung aufstellen ($n-rg(A) > \#$ freier Variablen)
+            \item Gleichung aufstellen ($n-rg(A) = \#$ freier Variablen)
             \item Aus Gleichungen Lösungsmenge bilden (als Vektoren)
             \item Lösungsmenge als Spann schreiben
             \end{itemize}
