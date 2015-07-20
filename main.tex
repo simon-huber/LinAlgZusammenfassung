@@ -1,4 +1,4 @@
-\documentclass{scrartcl} 
+﻿\documentclass{scrartcl} 
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -40,52 +40,52 @@
 	bottomline=false,
 	rightline=false,
 	linewidth=4pt,
-	backgroundcolor=none,
-	apptotikzsetting={\tikzset{mdfbackground/.append style={fill=colorBackground,fill opacity=.4}}},
-	frametitlefont=\sffamily\bfseries\color{black},
-	splittopskip=.5cm,
-	frametitlebelowskip=.3cm,
+    backgroundcolor=none,
+    apptotikzsetting={\tikzset{mdfbackground/.append style={fill=colorBackground,fill opacity=.4}}},
+    frametitlefont=\sffamily\bfseries\color{black},
+    splittopskip=.5cm,
+    frametitlebelowskip=.3cm,
 }
 
 % Definition
 \mdtheorem[
-style=box,
-linecolor=colorDefinition,
+  style=box,
+  linecolor=colorDefinition,
 ]{Def}{Defintion}[section]
 
 % Notiz
 \mdtheorem[
-style=box,
-linecolor=colorNotiz,
+  style=box,
+  linecolor=colorNotiz,
 ]{Notiz}{Notiz}[section]
 
 % Warnung
 \mdtheorem[
-style=box,
-linecolor=colorWarnung,
+  style=box,
+  linecolor=colorWarnung,
 ]{Warnung}{Warnung}[section]
 
 % Beispiel
 \mdtheorem[
-style=box,
-linecolor=colorBeispiel,
+  style=box,
+  linecolor=colorBeispiel,
 ]{Beispiel}{Beispiel}[section]
 
 % Satz
 \mdtheorem[
-style=box,
-linecolor=colorSatz,
+  style=box,
+  linecolor=colorSatz,
 ]{Satz}{Satz}[section]
 
 
 \hypersetup{
-	hidelinks,
-	colorlinks=false,
-	linktoc=all
+    hidelinks,
+    colorlinks=false,
+    linktoc=all
 }
 
 \makeatletter
-\edef\g@post{\relax$}
+  \edef\g@post{\relax$}
 
 % Begin gauss vline fix$
 % patch gauss macros for doing their work in `align'
@@ -94,14 +94,14 @@ linecolor=colorSatz,
 \usepackage{etoolbox}
 \makeatletter
 \patchcmd\g@matrix
-{\vbox\bgroup}
-{\vbox\bgroup\normalbaselines}% restore the standard baselineskip
-{}{}
+ {\vbox\bgroup}
+ {\vbox\bgroup\normalbaselines}% restore the standard baselineskip
+ {}{}
 \makeatother
 \newcommand{\BAR}{%
-	\hspace{-\arraycolsep}%
-	\strut\vrule % the `\vrule` is as high and deep as a strut
-	\hspace{-\arraycolsep}%
+  \hspace{-\arraycolsep}%
+  \strut\vrule % the `\vrule` is as high and deep as a strut
+  \hspace{-\arraycolsep}%
 }
 % End gauss vline fix
 
@@ -129,11 +129,11 @@ linecolor=colorSatz,
 
 
 \author{Felix Beil \\
-	Maximilian Gießelmann \\
-	Simon Huber \\
-	Sebastian Kneuer \\
-	Mit freundlicher Unterstützung durch Simon Plazotta\\
-	TUM SS 2015}
+Maximilian Gießelmann \\
+Simon Huber \\
+Sebastian Kneuer \\
+Mit freundlicher Unterstützung durch Simon Plazotta\\
+TUM SS 2015}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Auto Recompile in ShareLatex:                                                                         %
@@ -207,10 +207,10 @@ Durch Anzahl Links zu Seite geteilt Durch alle Seiten ergibt den Wert in der W-M
 \item \label{matrix Multiplikation} \textbf{\linkToRef[Matrix]{matrix} Multiplikation}:\\
 Nur möglich, wenn $A_{m,\textbf{n}}$ und $B_{\textbf{n},o}$! Dimmension der neuen Matrix ergibt sich aus der Zeilen Anzahl der ersten Matrix und der Spalten Anzahl der zweiten Matrix $\Rightarrow C_{m,o}$
 \begin{figure}[htp]
-\centering
-\includegraphics[width=15cm]{Multi}
+    \centering
+    \includegraphics[width=15cm]{Multi}
 %    \caption{\linkToRef[Matrix]{matrix} Multiplikation}
-\label{fig:multiplikation}
+    \label{fig:multiplikation}
 \end{figure}
 
 \end{itemize}
@@ -222,29 +222,29 @@ Für Matrizen gelten die folgenden Regeln.
 \begin{enumerate}[label={(\alph*)}]
 \item $(K^{m \times n}, +)$ ist eine abelsche Gruppe.
 \item Für alle $A,B \in K^{m \times n}$ und $s,s' \in K$ gelten:
-\begin{enumerate}[label={(\arabic*)}]
-\item $s \cdot (A + B) = s \cdot A + s \cdot B$,
-\item $(s + s') \cdot A + s' \cdot A$,
-\item $s \cdot (s' \cdot A) = (ss') \cdot A$,
-\item $1 \cdot A = A$.
-\end{enumerate}
+    \begin{enumerate}[label={(\arabic*)}]
+    \item $s \cdot (A + B) = s \cdot A + s \cdot B$,
+    \item $(s + s') \cdot A + s' \cdot A$,
+    \item $s \cdot (s' \cdot A) = (ss') \cdot A$,
+    \item $1 \cdot A = A$.
+    \end{enumerate}
 \item Seien $A,B,C$ Matrizen, so dass jeweils die unten gebildeten Summen und Produkte definiert sind. Dann gelten:
-\begin{enumerate}[label={(\arabic*)}]
-\item $(A \cdot B) \cdot C = A \cdot (B \cdot C)$,
-\item $A \cdot (B + C) = A \cdot B + A \cdot C$,
-\item $(A + B) \cdot C = A \cdot C + B \cdot C$.
-\item Für
-\begin{align*}
-I_n := \begin{pmatrix}
-1 & 0 & & \dots & 0 \\
-0 & 1 & & & \vdots \\
-& & \ddots & & \\
-\vdots & & & 1 & 0 \\
-0 & \dots & & 0 & 1
-\end{pmatrix} \in K^{n \times n}
-\end{align*}
-(die \textbf{Einheitsmatrix}) gelten $I_n \cdot A = A$ und $B \cdot I_n = B$.
-\end{enumerate}
+    \begin{enumerate}[label={(\arabic*)}]
+    \item $(A \cdot B) \cdot C = A \cdot (B \cdot C)$,
+    \item $A \cdot (B + C) = A \cdot B + A \cdot C$,
+    \item $(A + B) \cdot C = A \cdot C + B \cdot C$.
+    \item Für
+        \begin{align*}
+        I_n := \begin{pmatrix}
+            1 & 0 & & \dots & 0 \\
+            0 & 1 & & & \vdots \\
+            & & \ddots & & \\
+            \vdots & & & 1 & 0 \\
+            0 & \dots & & 0 & 1
+        \end{pmatrix} \in K^{n \times n}
+        \end{align*}
+        (die \textbf{Einheitsmatrix}) gelten $I_n \cdot A = A$ und $B \cdot I_n = B$.
+    \end{enumerate}
 \end{enumerate}
 \begin{itemize}
 \item $A \cdot B = B \cdot A $ ist FALSCH
@@ -364,12 +364,12 @@ Der \textbf{Rang} von A ist die Anzahl $r$ Zeilen in $A'$, die mindestens einen 
 \end{Def}
 \begin{Beispiel}
 \begin{align*}
-A &= \begin{pmatrix}
-1 & 8 & 2 & 0 \\
-0 & 0 & 1 & 2 \\
-0 & 0 & 0 & 0 \\
-\end{pmatrix}\\
-rg(A) &= 2
+    A &= \begin{pmatrix}
+        1 & 8 & 2 & 0 \\
+        0 & 0 & 1 & 2 \\
+        0 & 0 & 0 & 0 \\
+    \end{pmatrix}\\
+    rg(A) &= 2
 \end{align*}
 \end{Beispiel}
 
@@ -377,15 +377,15 @@ rg(A) &= 2
 \subsection{Lösbarkeit}
 \label{Lösbarkeit}
 Lösbarkeits-Fälle:
-\begin{itemize}
-\item $b_{r+1} \neq 0 \rightarrow $ keine Lösung
-\item $b_{r+1} = 0 \rightarrow $ LSG lösbar. Unterfälle:
-\begin{itemize}
-\item $ n = r \rightarrow $ eindeutige Lösung
-\item $n > r \rightarrow $ keine eindeutige Lösung, $n - r = \# $ freier Variablen
-\end{itemize}
-\end{itemize}
-
+	\begin{itemize}
+		\item $b_{r+1} \neq 0 \rightarrow $ keine Lösung
+		\item $b_{r+1} = 0 \rightarrow $ LSG lösbar. Unterfälle:
+		\begin{itemize}
+			\item $ n = r \rightarrow $ eindeutige Lösung
+			\item $n > r \rightarrow $ keine eindeutige Lösung, $n - r = \# $ freier Variablen
+		\end{itemize}
+	\end{itemize}
+	
 \begin{Beispiel}
 \begin{itemize}
 \item 
@@ -394,7 +394,7 @@ $
 	1 & 0 & 2 \\ 
 	0 & 1 & 7
 \end{pmatrix}
-\rightarrow r = 2 = n \rightarrow
+	\rightarrow r = 2 = n \rightarrow
 $ LSG lösbar
 
 \item 
@@ -409,8 +409,8 @@ $ r = 1 \neq 2 = n \\\qquad b_{r+1} = b_2 = 0 \rightarrow $ LSG ist lösbar, $n 
 \item
 \[
 \left(\begin{array}{ccc|c}
-1 & 2 & 3 & 4 \\ 
-0 & 0 & 0 & 2
+	1 & 2 & 3 & 4 \\ 
+	0 & 0 & 0 & 2
 \end{array}\right)  \]
 $ r = 1 \qquad b_{r+1} = b_2 = 2 \neq 0 \Rightarrow $ LSG nicht lösbar.
 
@@ -419,15 +419,15 @@ $ r = 1 \qquad b_{r+1} = b_2 = 2 \neq 0 \Rightarrow $ LSG nicht lösbar.
 
 Rangkriterien für Lösbarkeit von LGS:
 \begin{itemize}
-\item $A \in K^{mxn} $ Koeff. Matrix (m Glg., n Unbekannte)
-\item $b \in K^{mxn} $ rechte Seite
-\item $rg(A|B) \in \{rg(A), rg(A) + 1\} $ (einzigen Beiden Möglichkeiten)
-und es gilt:
-\begin{itemize}
-\item LGS lösbar $\Leftrightarrow rg(A|B) = rg(A)$
-\item In diesem Fall: Lösung Eindeutig $\leftrightarrow rg(A) = rg(A|B) = n$
-\item Lösung nicht Eindeutig $\leftrightarrow rg(A) < n$ (und $n-rg(A) = \# $ freier Variablen)
-\end{itemize}
+	\item $A \in K^{mxn} $ Koeff. Matrix (m Glg., n Unbekannte)
+	\item $b \in K^{mxn} $ rechte Seite
+	\item $rg(A|B) \in \{rg(A), rg(A) + 1\} $ (einzigen Beiden Möglichkeiten)
+	und es gilt:
+	\begin{itemize}
+	\item LGS lösbar $\Leftrightarrow rg(A|B) = rg(A)$
+	\item In diesem Fall: Lösung Eindeutig $\leftrightarrow rg(A) = rg(A|B) = n$
+	\item Lösung nicht Eindeutig $\leftrightarrow rg(A) < n$ (und $n-rg(A) = \# $ freier Variablen)
+	\end{itemize}
 \end{itemize}
 
 \newpage
@@ -457,43 +457,43 @@ Der \label{Spann} Spann ist der kleinste Untervektorraum, der die Menge A enthä
 
 \subsubsection{Untervektorräume}
 \begin{Def}
-$V~K-VR$ (K körper) $(V,+,\cdot)$ \\
-$U \subseteq V$ heißt Unter(vektor)raum $\Leftrightarrow$
-\begin{enumerate}[label={(\arabic*)}]
-\item % (1)
-$U \neq \oslash$
+	$V~K-VR$ (K körper) $(V,+,\cdot)$ \\
+	$U \subseteq V$ heißt Unter(vektor)raum $\Leftrightarrow$
+	\begin{enumerate}[label={(\arabic*)}]
+		\item % (1)
+		$U \neq \oslash$
+		
+		\item % (2)
+		$\forall v,w \in U \Rightarrow v + w \in U$ 
+		
+		\item % (3)
+		$\forall a \in K, v \in U \Rightarrow a \cdot v \in U$
+	\end{enumerate}
 
-\item % (2)
-$\forall v,w \in U \Rightarrow v + w \in U$ 
 
-\item % (3)
-$\forall a \in K, v \in U \Rightarrow a \cdot v \in U$
-\end{enumerate}
-
-
-Jeder Untervektorraum  enthält die 0 (Prop 3.3a) $0 \cdot v = 0 \in U$) Falls als eine Menge $U \leq V$ die 0 enthält, kann kein UVR sein.\\
-Schnitt von UVR ($U_1, U_2 \subseteq V$):
-\begin{enumerate}
-\item $U_1 \schnitt U_2 \subseteq V$ ist ein Unterraum.
-\item $U_1 + U_2 := \{u_1 + u_2 | u_1 \in U_1, u_2 \in U_2\}$ ist ein Unterraum.
-\item Ist $M \neq \emptyset$ eine nicht-leere Menge, deren Elemente Unterräume von $V$ sind, so ist auch der Schnitt ein Unterraum.
-\end{enumerate}
+	Jeder Untervektorraum  enthält die 0 (Prop 3.3a) $0 \cdot v = 0 \in U$) Falls als eine Menge $U \leq V$ die 0 enthält, kann kein UVR sein.\\
+	Schnitt von UVR ($U_1, U_2 \subseteq V$):
+	\begin{enumerate}
+	\item $U_1 \schnitt U_2 \subseteq V$ ist ein Unterraum.
+	\item $U_1 + U_2 := \{u_1 + u_2 | u_1 \in U_1, u_2 \in U_2\}$ ist ein Unterraum.
+	\item Ist $M \neq \emptyset$ eine nicht-leere Menge, deren Elemente Unterräume von $V$ sind, so ist auch der Schnitt ein Unterraum.
+	\end{enumerate}
 \end{Def}
-
+	
 
 \newpage
 \section{Linearkombinationen}
 \begin{Def}
-\begin{enumerate}[label={(\alph*)}]
-\item Es seien $v_1, ..., v_n \in V$ Vektoren. Ein Vektor $v \in V$ heißt \textbf{Linearkombination} von $v_1, ..., v_n$, falls es Skalare $a_1, ..., a_n \in K$ gibt mit
-\begin{align*}
-v = a_1v_1 + ... + a_nv_n
-\end{align*}
-\item Sei $S \subseteq V$ eine Teilmenge. Ein Vektor $v \in V$ heißt \textbf{Linearkombination} von $S$, falls es $n \in \mathbb{N}$ und $v_1, ..., v_n \in S$ gibt, sodass $v$ eine Linearkombination von $v_1, ..., v_n$ ist. Falls $S = \emptyset$, so ist der Nullvektor $0$ (die einzige) Linearkombination von $S$. ($0$ wird als leere Summe aufgefasst)
-\end{enumerate}
+    \begin{enumerate}[label={(\alph*)}]
+    \item Es seien $v_1, ..., v_n \in V$ Vektoren. Ein Vektor $v \in V$ heißt \textbf{Linearkombination} von $v_1, ..., v_n$, falls es Skalare $a_1, ..., a_n \in K$ gibt mit
+        \begin{align*}
+            v = a_1v_1 + ... + a_nv_n
+        \end{align*}
+    \item Sei $S \subseteq V$ eine Teilmenge. Ein Vektor $v \in V$ heißt \textbf{Linearkombination} von $S$, falls es $n \in \mathbb{N}$ und $v_1, ..., v_n \in S$ gibt, sodass $v$ eine Linearkombination von $v_1, ..., v_n$ ist. Falls $S = \emptyset$, so ist der Nullvektor $0$ (die einzige) Linearkombination von $S$. ($0$ wird als leere Summe aufgefasst)
+    \end{enumerate}
 \end{Def}
 \begin{Notiz}
-Eine Linearkombination ist ein Vektor, der die Koeffizienten für die einzelnen Variablen (Spalten in einer Matrix) von einem \linkToRef[Lineares Gleichungssystem]{Linearem Gleichungssystem} angibt.
+    Eine Linearkombination ist ein Vektor, der die Koeffizienten für die einzelnen Variablen (Spalten in einer Matrix) von einem \linkToRef[Lineares Gleichungssystem]{Linearem Gleichungssystem} angibt.
 \end{Notiz}
 
 \subsection{Berechnung}
@@ -619,7 +619,7 @@ $d$ ist leicht zu verwechseln mit der Funktion $d(c, c') $ des Hamming-Abstands!
 \begin{Def}
 Sei $\varphi: V \rightarrow W$ linear
 \begin{align*}
-Kern(\varphi) := \{v \in V | \varphi(v) = 0\} \subseteq V
+    Kern(\varphi) := \{v \in V | \varphi(v) = 0\} \subseteq V
 \end{align*}
 \end{Def}
 \begin{Notiz}
@@ -634,7 +634,7 @@ $rg(A) = dim(Kern(A))$
 \begin{Def}
 Sei $\varphi: V \rightarrow W$ linear
 \begin{align*}
-Bild(\varphi) := \varphi(V) = \{\varphi(v) | v \in V \} \subseteq W
+    Bild(\varphi) := \varphi(V) = \{\varphi(v) | v \in V \} \subseteq W
 \end{align*}
 \end{Def}
 \begin{Notiz}
@@ -652,88 +652,88 @@ $D_B(\varphi) \in \mathbb{K}^{n \times n} $ beschreibt $\varphi$ bezüglich $B$.
 \end{Def}
 
 \begin{Notiz}
-Spalten der Darstellungsmatrix $\Leftrightarrow$ Bilder der Basisvektoren
+  Spalten der Darstellungsmatrix $\Leftrightarrow$ Bilder der Basisvektoren
 \end{Notiz}
 
 \newpage
 \section{Determinanten}
-\subsection{Signum / Vorzeichen}
-\begin{itemize}
-\item $S_n = := \{\sigma   :\{1, \dots, n\} \rightarrow \{1, \dots, n\} | \sigma~ist~bijektiv\}$
-\item $S_n$ heißen Permutationen.
-\item $sgn(\sigma) := (-1)^{w(\sigma)} $, das Vorzeichen / Signum von $\sigma$
-\end{itemize}
-
-\begin{Notiz}
-\begin{itemize}
-\item $K^{n \times n} \rightarrow K$
-\item $det = 0 \Rightarrow$ nicht invertierbar!
-\item $det \neq 0 \Rightarrow$ invertierbar
-\end{itemize}
-\end{Notiz}
-\subsection{Rechenregeln}
-\label{Rechenregeln Determinanten}
-Sei $A \in K$
-\begin{Def}
-\begin{itemize}
-\setlength\itemsep{-0.25em}
-\item Vertauschen zweier \linkToRef[Zeilenvektor]{Zeilen} (bzw. \linkToRef[Zeilenvektor]{Spalten}) von $A \Rightarrow$ Vorzeichenwechsel
-\item Multipliziere \linkToRef[Zeilenvektor]{Zeile} oder \linkToRef[Zeilenvektor]{Spalte} mit $\lambda \neq 0 \Rightarrow$ det wird mit $\frac{1}{\lambda}$ multipliziert
-\item Addiere das $\lambda$-Fache einer \linkToRef[Zeilenvektor]{Spalte} (oder \linkToRef[Zeilenvektor]{Zeile}) auf eine andere $\Rightarrow det$ ändert sich nicht
-\item $det\begin{pmatrix} \lambda_1 & & x \\ & \ddots & \\ 0 & & \lambda_n \end{pmatrix} = \sum_{i = 1}^{n} \lambda_i$
-\item $det\left(\begin{array}{c|c} A & C \\ \hline 0 & B \end{array}\right) = det(A) \cdot det(B)$
-\begin{Notiz}
-Die Nullmatrix muss nicht quadratisch sein.\\
-A,B müssen quadratisch sein, aber nicht von der selben Größe.
-\end{Notiz}
-\item $det(A) = det(A^T)$
-\item $det(\lambda \cdot A) = \lambda^n \cdot det(A)$
-\item $A$ invertierbar $\Rightarrow det(A^{-1}) = det(A)^{-1}$
-\begin{Notiz}
-Notation $det(A) = |A|$
-\begin{Warnung}
-Gefahr bei $A^{1 \times 1}$: $|-3| = \begin{cases}
-	-3 ~~~ Determinante\\
-	3 ~~~~~ Betrag
-\end{cases}$
-\end{Warnung}
-\end{Notiz}
-\end{itemize}
-\end{Def}
-
-\subsubsection{Sarrus-Regel}
-\label{Sarrus-Regel}
-\begin{Notiz}[Für 2x2]
-$det\begin{pmatrix} 
-	a_{1,1} & a_{1,2} \\
-	a_{2,1} & a_{2,2}
-\end{pmatrix} = a_{1,1} \cdot a_{2,2} - a_{1,2} \cdot a_{2,1} $ 
-\end{Notiz}
-
-\begin{Def}
-\begin{align*}
-&det\begin{pmatrix} a_{1,1} & a_{1,2} & a_{1,3}\\a_{2,1} & a_{2,2} & a_{2,3}\\a_{3,1} & a_{3,2} &                       a_{3,3} \end{pmatrix} \\
-&= a_{1,1} \cdot a_{2,2} \cdot a_{3,3} + a_{1,2} \cdot a_{2,3} \cdot a_{3,1} + a_{1,3} \cdot                            a_{2,1} \cdot a_{3,2} \\
-&~~- a_{1,2} \cdot a_{2,1} \cdot a_{3,3} - a_{1,1} \cdot a_{2,3} \cdot a_{3,2} - a_{1,3} \cdot                          a_{2,2} \cdot a_{3,1}
-\end{align*}
-\begin{figure}[H]
-\centering
-\includegraphics[width=7cm]{Sarrus-Regel}
+    \subsection{Signum / Vorzeichen}
+        \begin{itemize}
+            \item $S_n = := \{\sigma   :\{1, \dots, n\} \rightarrow \{1, \dots, n\} | \sigma~ist~bijektiv\}$
+            \item $S_n$ heißen Permutationen.
+            \item $sgn(\sigma) := (-1)^{w(\sigma)} $, das Vorzeichen / Signum von $\sigma$
+        \end{itemize}
+        
+    \begin{Notiz}
+        \begin{itemize}
+            \item $K^{n \times n} \rightarrow K$
+            \item $det = 0 \Rightarrow$ nicht invertierbar!
+            \item $det \neq 0 \Rightarrow$ invertierbar
+        \end{itemize}
+    \end{Notiz}
+    \subsection{Rechenregeln}
+    \label{Rechenregeln Determinanten}
+        Sei $A \in K$
+        \begin{Def}
+        \begin{itemize}
+        \setlength\itemsep{-0.25em}
+        \item Vertauschen zweier \linkToRef[Zeilenvektor]{Zeilen} (bzw. \linkToRef[Zeilenvektor]{Spalten}) von $A \Rightarrow$ Vorzeichenwechsel
+        \item Multipliziere \linkToRef[Zeilenvektor]{Zeile} oder \linkToRef[Zeilenvektor]{Spalte} mit $\lambda \neq 0 \Rightarrow$ det wird mit $\frac{1}{\lambda}$ multipliziert
+        \item Addiere das $\lambda$-Fache einer \linkToRef[Zeilenvektor]{Spalte} (oder \linkToRef[Zeilenvektor]{Zeile}) auf eine andere $\Rightarrow det$ ändert sich nicht
+        \item $det\begin{pmatrix} \lambda_1 & & x \\ & \ddots & \\ 0 & & \lambda_n \end{pmatrix} = \sum_{i = 1}^{n} \lambda_i$
+        \item $det\left(\begin{array}{c|c} A & C \\ \hline 0 & B \end{array}\right) = det(A) \cdot det(B)$
+        \begin{Notiz}
+        Die Nullmatrix muss nicht quadratisch sein.\\
+        A,B müssen quadratisch sein, aber nicht von der selben Größe.
+        \end{Notiz}
+        \item $det(A) = det(A^T)$
+        \item $det(\lambda \cdot A) = \lambda^n \cdot det(A)$
+        \item $A$ invertierbar $\Rightarrow det(A^{-1}) = det(A)^{-1}$
+        \begin{Notiz}
+        Notation $det(A) = |A|$
+        \begin{Warnung}
+        Gefahr bei $A^{1 \times 1}$: $|-3| = \begin{cases}
+               -3 ~~~ Determinante\\
+               3 ~~~~~ Betrag
+            \end{cases}$
+        \end{Warnung}
+        \end{Notiz}
+        \end{itemize}
+        \end{Def}
+        
+        \subsubsection{Sarrus-Regel}
+        \label{Sarrus-Regel}
+        \begin{Notiz}[Für 2x2]
+        $det\begin{pmatrix} 
+        a_{1,1} & a_{1,2} \\
+        a_{2,1} & a_{2,2}
+        \end{pmatrix} = a_{1,1} \cdot a_{2,2} - a_{1,2} \cdot a_{2,1} $ 
+        \end{Notiz}
+        
+        \begin{Def}
+             \begin{align*}
+                &det\begin{pmatrix} a_{1,1} & a_{1,2} & a_{1,3}\\a_{2,1} & a_{2,2} & a_{2,3}\\a_{3,1} & a_{3,2} &                       a_{3,3} \end{pmatrix} \\
+                &= a_{1,1} \cdot a_{2,2} \cdot a_{3,3} + a_{1,2} \cdot a_{2,3} \cdot a_{3,1} + a_{1,3} \cdot                            a_{2,1} \cdot a_{3,2} \\
+                &~~- a_{1,2} \cdot a_{2,1} \cdot a_{3,3} - a_{1,1} \cdot a_{2,3} \cdot a_{3,2} - a_{1,3} \cdot                          a_{2,2} \cdot a_{3,1}
+        \end{align*}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=7cm]{Sarrus-Regel}
 %            \caption{Sarrus-Regel}
-\label{fig:sarrus}
-\end{figure}
-\end{Def}
-
-
-\subsubsection{Entwicklungssätze}
-\begin{Def}
-Sei $a_{ij}$ der j-te Eintrag in der i-ten Zeile.
-\begin{itemize}
-\item $\sum_{i = 1}^{n} (-1)^{i + j} \cdot a_{ij} \cdot det(A_{i,j})$ Entwicklung nach \linkToRef[Zeilenvektor]{Spalte} $i$
-\item $\sum_{j = 1}^{n} (-1)^{i + j} \cdot a_{ij} \cdot det(A_{i,j})$ Entwicklung nach \linkToRef[Zeilenvektor]{Zeile} $j$
-\end{itemize}
-\end{Def}
-
+            \label{fig:sarrus}
+        \end{figure}
+        \end{Def}
+        
+        
+        \subsubsection{Entwicklungssätze}
+        \begin{Def}
+            Sei $a_{ij}$ der j-te Eintrag in der i-ten Zeile.
+            \begin{itemize}
+                \item $\sum_{i = 1}^{n} (-1)^{i + j} \cdot a_{ij} \cdot det(A_{i,j})$ Entwicklung nach \linkToRef[Zeilenvektor]{Spalte} $i$
+                \item $\sum_{j = 1}^{n} (-1)^{i + j} \cdot a_{ij} \cdot det(A_{i,j})$ Entwicklung nach \linkToRef[Zeilenvektor]{Zeile} $j$
+            \end{itemize}
+        \end{Def}
+    
 \newpage
 \section{Eigenwerte}
 \label{Eigenwert}
@@ -763,25 +763,25 @@ Nullstellen von $X_A$ sind Eigenwerte von $A$.
 \end{Satz}
 
 \begin{Def}[algebraische Vielfacheit]
-$m_a(\lambda)$ ist die Vielfacheit der Nullstelle $\lambda$ im charakteristischen Polynom $X_A$.
+    $m_a(\lambda)$ ist die Vielfacheit der Nullstelle $\lambda$ im charakteristischen Polynom $X_A$.
 \end{Def}
 
 \begin{Def}[geometrische Vielfacheit]
-\begin{align*}
-TODO def: Eigenraum
-m_g(\lambda) := dim(E_\lambda)
-\end{align*}
+    \begin{align*}
+        m_g(\lambda) := dim(E_\lambda)
+    \end{align*}
 \end{Def}
+        TODO def: Eigenraum
 
 \newpage
 \section{Komplexe Zahlen}
 
 \begin{Def}
-\begin{align*}
-\mathbb{C} :&= \left\{ \begin{pmatrix} a & b \\ -b & a \end{pmatrix} \middle| a,b \in \mathbb{R} \right\} \\
-&= \{ a \cdot I_2 + b \cdot i |a,b \in \mathbb{R} \}
-\end{align*}
-mit $i := \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}$
+    \begin{align*}
+    \mathbb{C} :&= \left\{ \begin{pmatrix} a & b \\ -b & a \end{pmatrix} \middle| a,b \in \mathbb{R} \right\} \\
+    &= \{ a \cdot I_2 + b \cdot i |a,b \in \mathbb{R} \}
+    \end{align*}
+    mit $i := \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}$
 \end{Def}
 
 \begin{Def}
@@ -794,15 +794,15 @@ i^2 &= -1
 \subsection{Real- und Imaginärteil}
 
 \begin{Def}[Realteil]
-\begin{align*}
-a = Re(z)
-\end{align*}
+    \begin{align*}
+        a = Re(z)
+    \end{align*}
 \end{Def}
 
 \begin{Def}[Imaginärteil]
-\begin{align*}
-b = Im(z)
-\end{align*}
+    \begin{align*}
+        b = Im(z)
+    \end{align*}
 \end{Def}
 
 \newpage
@@ -816,28 +816,28 @@ Die Spaltensummen einer Matrix sind 1.
 \section{Skalarprodukt}
 
 \begin{Def}
-Für $v = \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix}$ und $w = \begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix} \in K^n$ ist das Skalarprodukt:
-\begin{align*}
-\left< v, w \right> := \sum_{i=1}^n x_i y_i (= v^T w) \in K
-\end{align*}
+    Für $v = \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix}$ und $w = \begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix} \in K^n$ ist das Skalarprodukt:
+    \begin{align*}
+        \left< v, w \right> := \sum_{i=1}^n x_i y_i (= v^T w) \in K
+    \end{align*}
 \end{Def}
 
 \begin{Notiz}
-Zeilenweise multiplizieren und die Teil Ergebnisse addieren.\\
-Aus der Schule bekanntes Verfahren: "`Kringel Operator'': $\circ$
-\begin{align*}
-\begin{pmatrix}
-a_1 \\ a_2 \\ a_3
-\end{pmatrix}
-\circ
-\begin{pmatrix}
-b_1 \\ b_2 \\ b_3
-\end{pmatrix} = a_1b_1 + a_2b_2 + a_3b_3
-\end{align*}
+    Zeilenweise multiplizieren und die Teil Ergebnisse addieren.\\
+    Aus der Schule bekanntes Verfahren: "`Kringel Operator'': $\circ$
+    \begin{align*}
+        \begin{pmatrix}
+            a_1 \\ a_2 \\ a_3
+        \end{pmatrix}
+        \circ
+        \begin{pmatrix}
+            b_1 \\ b_2 \\ b_3
+        \end{pmatrix} = a_1b_1 + a_2b_2 + a_3b_3
+    \end{align*}
 \end{Notiz}
 
 \begin{Warnung}
-Die Notation $\left< v,w \right>$ ist leicht zu verwechseln mit dem Spann!
+    Die Notation $\left< v,w \right>$ ist leicht zu verwechseln mit dem Spann!
 \end{Warnung}
 
 \newpage
@@ -854,14 +854,14 @@ A = A^T
 \section{Anwendungen in der Graphentheorie}
 
 \begin{Def}
-\begin{align*}
-G = (V, E)
-\end{align*}
-Wobei $V$ die Menge der Knoten (engl. \textit{vertices}) darstellt, und $E$ die Menge der Kanten (engl. \textit{edges})
+    \begin{align*}
+        G = (V, E)
+    \end{align*}
+    Wobei $V$ die Menge der Knoten (engl. \textit{vertices}) darstellt, und $E$ die Menge der Kanten (engl. \textit{edges})
 \end{Def}
 
 \begin{Def}[Adjazenzmatrix]
-Die Adjazenzmatrix gibt die Kanten zwischen den Knoten an.
+    Die Adjazenzmatrix gibt die Kanten zwischen den Knoten an.
 \end{Def}
 
 \newpage
@@ -874,15 +874,15 @@ Die Adjazenzmatrix gibt die Kanten zwischen den Knoten an.
 \item \linkTo{LGS} in eine \linkTo{Matrix} schreiben
 \item \linkToRef[Gauss]{Gauß-Algorithmus} anwenden, um strenge \linkTo{Zeilenstufenform} zu erhalten
 \item 
-\begin{enumerate}
-\item direkt alle Elemente ablesen, falls möglich
-\item 
-\begin{itemize}
-\item Gleichung aufstellen ($n-rg(A) > \#$ freier Variablen)
-\item Aus Gleichungen Lösungsmenge bilden (als Vektoren)
-\item Lösungsmenge als Spann schreiben
-\end{itemize}
-\end{enumerate}
+    \begin{enumerate}
+        \item direkt alle Elemente ablesen, falls möglich
+        \item 
+            \begin{itemize}
+            \item Gleichung aufstellen ($n-rg(A) > \#$ freier Variablen)
+            \item Aus Gleichungen Lösungsmenge bilden (als Vektoren)
+            \item Lösungsmenge als Spann schreiben
+            \end{itemize}
+    \end{enumerate}
 \end{enumerate}
 
 \subsection{Lösbarkeit von LGS}
@@ -904,16 +904,16 @@ Weitere Unterscheidung:
 \begin{enumerate}
 \item Wenn es sich um die Lösungsmenge eines \linkToRef[homogenes LGS]{homogenen LGS} (also  $\{x|Ax=0\}$ handelt ist es ein \linkTo{Untervektorraum}
 \item Unter(vektorraum)kriterien prüfen: 
-\begin{enumerate}[label={(\arabic*)}]
-\item % (1)
-nicht leer, insbesondere muss 0 enthalten sein: $U \neq \emptyset ~~|~~ 0 \in V$ 
-
-\item % (2)
-Addition abgeschlossen: $\forall v,w \in U \Rightarrow v + w \in U$ 
-
-\item % (3)
-Multiplikation abgeschlossen: $\forall a \in K, v \in U \Rightarrow a \cdot v \in U$
-\end{enumerate}
+        \begin{enumerate}[label={(\arabic*)}]
+		\item % (1)
+		nicht leer, insbesondere muss 0 enthalten sein: $U \neq \emptyset ~~|~~ 0 \in V$ 
+		
+		\item % (2)
+		Addition abgeschlossen: $\forall v,w \in U \Rightarrow v + w \in U$ 
+		
+		\item % (3)
+		Multiplikation abgeschlossen: $\forall a \in K, v \in U \Rightarrow a \cdot v \in U$
+	\end{enumerate}
 \end{enumerate}
 
 \begin{Notiz}
@@ -925,31 +925,31 @@ $U \subseteq V-UVR \Leftrightarrow U$ mit Verknüpfung $+,\cdot$ selbst VR.
 \begin{Beispiel}
 \begin{itemize}
 \item % b)
-$M_2 = \{x \in \mathbb{R}^n | x_1 \geq 0\}$
-\begin{enumerate}[label={(\arabic*)}]
-\item % (1)
-$O_n \in M_2 \Rightarrow M_2 \neq \emptyset \checkmark$
-
-\item % (2)
-Sei $x,y \in M_2 \Rightarrow x_1 \geq 0, y_1 \geq 0 \Rightarrow z = x + y = (x_1 + y_1, ..., x_n + y_n) \Rightarrow z \in M_2 \checkmark$
-
-\item % (3)
-$u = (1, 0, ..., 0) \in M_2$, aber $(-1) \cdot u = (-1, 0, ..., 0) \notin M_2$ \\
-$M_2$ ist kein UVR.
-\end{enumerate}
-
-\item % c)
-$M_3 = \{x \in \mathbb{R} | x_1 - 2x_2 = 0\}$
-\begin{enumerate}[label={(\arabic*)}]
-\item % (1)
-$O_n \in M_3 \Rightarrow M_3 \neq \emptyset \checkmark$
-
-\item % (2)
-$x,y \in M_3 \Rightarrow x_1 - 2x_2 = 0 = y_1 - 2y_y \Rightarrow (x_1 + y_1) - 2(x_2 + y_2) = 0 \Rightarrow x + y \in M_2 \Rightarrow z = x + y = (x_1 + y_1, ..., x_1 + y_y) \in M_3 \Leftrightarrow x_1 + y_1 - 2(x_2 + y_2) = 0 \Leftrightarrow x_1 - 2x_2 + y_1 - 2y_2 = 0 \Leftrightarrow x,y \in M_3$
-
-\item % (3)a
-$a \in \mathbb{R}, x \in M_3$ (also $x_1 - 2x_2 = 0$) $\Rightarrow ax = (ax_1, ax_2, ..., ax_y) \in M_3 \Leftrightarrow ax_1 - 2ax_2 = 0 \Leftrightarrow a(x_1 - 2x_2) = 0 \Leftrightarrow x \in M_3 \Rightarrow M_3$ ist UVR
-\end{enumerate}
+		$M_2 = \{x \in \mathbb{R}^n | x_1 \geq 0\}$
+		\begin{enumerate}[label={(\arabic*)}]
+			\item % (1)
+			$O_n \in M_2 \Rightarrow M_2 \neq \emptyset \checkmark$
+			
+			\item % (2)
+			Sei $x,y \in M_2 \Rightarrow x_1 \geq 0, y_1 \geq 0 \Rightarrow z = x + y = (x_1 + y_1, ..., x_n + y_n) \Rightarrow z \in M_2 \checkmark$
+			
+			\item % (3)
+			$u = (1, 0, ..., 0) \in M_2$, aber $(-1) \cdot u = (-1, 0, ..., 0) \notin M_2$ \\
+			$M_2$ ist kein UVR.
+		\end{enumerate}
+		
+		\item % c)
+		$M_3 = \{x \in \mathbb{R} | x_1 - 2x_2 = 0\}$
+		\begin{enumerate}[label={(\arabic*)}]
+			\item % (1)
+			$O_n \in M_3 \Rightarrow M_3 \neq \emptyset \checkmark$
+			
+			\item % (2)
+			$x,y \in M_3 \Rightarrow x_1 - 2x_2 = 0 = y_1 - 2y_y \Rightarrow (x_1 + y_1) - 2(x_2 + y_2) = 0 \Rightarrow x + y \in M_2 \Rightarrow z = x + y = (x_1 + y_1, ..., x_1 + y_y) \in M_3 \Leftrightarrow x_1 + y_1 - 2(x_2 + y_2) = 0 \Leftrightarrow x_1 - 2x_2 + y_1 - 2y_2 = 0 \Leftrightarrow x,y \in M_3$
+			
+			\item % (3)a
+			$a \in \mathbb{R}, x \in M_3$ (also $x_1 - 2x_2 = 0$) $\Rightarrow ax = (ax_1, ax_2, ..., ax_y) \in M_3 \Leftrightarrow ax_1 - 2ax_2 = 0 \Leftrightarrow a(x_1 - 2x_2) = 0 \Leftrightarrow x \in M_3 \Rightarrow M_3$ ist UVR
+		\end{enumerate}
 \end{itemize}
 \end{Beispiel}
 
@@ -971,34 +971,34 @@ $a \in \mathbb{R}, x \in M_3$ (also $x_1 - 2x_2 = 0$) $\Rightarrow ax = (ax_1, a
 
 \begin{Beispiel}
 \begin{itemize}
-\item % b)
-$V= \mathbb{R} [X] = \{a_0 + a_1x + a_2x^2 | a_0, a_1, a_2 \in \mathbb{R}\} $\\
-VL: $dim(V) = 3 \leq 2$ und $ S_0 = \{ 1, x, x^2\}$ ist eine Basis von $V$\\
-Ist $ S_1 = \{ 1, x + 1, x^2 + x + 1\}$ linear unabhängig | EZS | Basis?
-\begin{enumerate}[label={(\arabic*)}]
-\item % (1)
-zz. $\lambda_1 = \lambda_2 =  \lambda_3 = 0$\\
-$S_1$ ist linear abhängig: Seien $\lambda_1, \lambda_2, \lambda_3 \in \mathbb{R}$ mit $\lambda_1 \cdot 1 + \lambda_2 \cdot (x+1) + \lambda_3 \cdot (x^2 + x + 1) = 0 \Leftrightarrow (\lambda_1 + \lambda_2 +  \lambda_3) \cdot 1 + ( \lambda_2 +  \lambda_3) \cdot x + \lambda3x^2 = 0 $\\
-Da $1,x,x^2$ linear unabhängig $\Rightarrow$ LGS $\lambda_1, \lambda_2, \lambda_3 = 0 $\\
-$ \lambda_2 + \lambda_3 = 0, \lambda_3 = 0 \Rightarrow \lambda_1 + \lambda_2 + \lambda_3 = 0 \checkmark$ 
-
-\item % (2)
-Zeige, dass $S_1$ EZS von V ist. Es genügt zu zeigen, dass $S_0=\{1,x,x^2\} ~~\leq <S_1>$, da dann gilt:
-
-\[V = ~~ <S_0> ~~ = ~~ <1, x,x^2> ~~ \leq ~~ <S_1> ~~ \leq V ~~ \Rightarrow ~~ V = <S_1>\]
-
-\begin{itemize}
-\item $ 1 \in ~~ < 1, x + 1, x^2 + x + 1> ~~$, denn $1 = 1 \cdot 1 + 0 \cdot (x+1) + 0 \cdot (\dots)$ 
-\item $ x \in ~~ < 1, x + 1, x^2 + x + 1> ~~$, denn $x = -1 \cdot 1 + 1 \cdot (x+1)$ 
-\item $ x^2 \in ~~ < 1, x + 1, x^2 + x + 1> ~~$, denn $x^2 = 0 \cdot 1 - 1 \cdot (x+1) + 1 \cdot (x^2 + x + 1)$ 
-\end{itemize}
-Also gilt $S_1$ ist EZS.
-
-\item % (3)
-Nach Korollar 5.13:\\
-$dim(V) = 3 = |S_1| $ und $S_1$ ist EZS $\Rightarrow S_1$ ist Basis.
-\end{enumerate}
-
+    \item % b)
+		$V= \mathbb{R} [X] = \{a_0 + a_1x + a_2x^2 | a_0, a_1, a_2 \in \mathbb{R}\} $\\
+		VL: $dim(V) = 3 \leq 2$ und $ S_0 = \{ 1, x, x^2\}$ ist eine Basis von $V$\\
+		Ist $ S_1 = \{ 1, x + 1, x^2 + x + 1\}$ linear unabhängig | EZS | Basis?
+		\begin{enumerate}[label={(\arabic*)}]
+			\item % (1)
+			zz. $\lambda_1 = \lambda_2 =  \lambda_3 = 0$\\
+			$S_1$ ist linear abhängig: Seien $\lambda_1, \lambda_2, \lambda_3 \in \mathbb{R}$ mit $\lambda_1 \cdot 1 + \lambda_2 \cdot (x+1) + \lambda_3 \cdot (x^2 + x + 1) = 0 \Leftrightarrow (\lambda_1 + \lambda_2 +  \lambda_3) \cdot 1 + ( \lambda_2 +  \lambda_3) \cdot x + \lambda3x^2 = 0 $\\
+			Da $1,x,x^2$ linear unabhängig $\Rightarrow$ LGS $\lambda_1, \lambda_2, \lambda_3 = 0 $\\
+			$ \lambda_2 + \lambda_3 = 0, \lambda_3 = 0 \Rightarrow \lambda_1 + \lambda_2 + \lambda_3 = 0 \checkmark$ 
+			
+			\item % (2)
+			Zeige, dass $S_1$ EZS von V ist. Es genügt zu zeigen, dass $S_0=\{1,x,x^2\} ~~\leq <S_1>$, da dann gilt:
+			
+			\[V = ~~ <S_0> ~~ = ~~ <1, x,x^2> ~~ \leq ~~ <S_1> ~~ \leq V ~~ \Rightarrow ~~ V = <S_1>\]
+			
+			\begin{itemize}
+			\item $ 1 \in ~~ < 1, x + 1, x^2 + x + 1> ~~$, denn $1 = 1 \cdot 1 + 0 \cdot (x+1) + 0 \cdot (\dots)$ 
+			\item $ x \in ~~ < 1, x + 1, x^2 + x + 1> ~~$, denn $x = -1 \cdot 1 + 1 \cdot (x+1)$ 
+			\item $ x^2 \in ~~ < 1, x + 1, x^2 + x + 1> ~~$, denn $x^2 = 0 \cdot 1 - 1 \cdot (x+1) + 1 \cdot (x^2 + x + 1)$ 
+			\end{itemize}
+			Also gilt $S_1$ ist EZS.
+			
+			\item % (3)
+			Nach Korollar 5.13:\\
+			$dim(V) = 3 = |S_1| $ und $S_1$ ist EZS $\Rightarrow S_1$ ist Basis.
+        \end{enumerate}
+		
 \end{itemize}
 
 \end{Beispiel}
@@ -1009,10 +1009,10 @@ $dim(V) = 3 = |S_1| $ und $S_1$ ist EZS $\Rightarrow S_1$ ist Basis.
 \item Schreibe alle Vektoren \underline{stehend} nebeneinander
 \item \linkToRef[Gauss]{Gauß} anwenden, um \linkTo{Zeilenstufenform} zu erhalten
 \item 
-\begin{enumerate}
-\item Falls $rg(A) = \# $ der Spalten (also $n$) $\Rightarrow$ linear \textbf{unabhängig}
-\item Falls $rg(A) \neq n  \Rightarrow $ linear \textbf{abhängig} 
-\end{enumerate}
+    \begin{enumerate}
+    \item Falls $rg(A) = \# $ der Spalten (also $n$) $\Rightarrow$ linear \textbf{unabhängig}
+    \item Falls $rg(A) \neq n  \Rightarrow $ linear \textbf{abhängig} 
+    \end{enumerate}
 \end{enumerate}
 
 \subsection{Lineare Codes}
@@ -1024,23 +1024,23 @@ $\rightarrow$ Falls nicht, löse das \linkTo{LGS} $P \cdot c = 0 $ und bestimme 
 \end{enumerate}
 
 \subsubsection{Informationen des Codes bestimmen}
-\begin{enumerate}
-\item Falls Generatormatrix gegeben:
-\begin{itemize}
-\item $G \in \mathbb{K}^{n \times k} \Rightarrow (n,k)$-Code
-\item d (Minimalabstand der Paritycheckmatrix)
-\begin{enumerate}
-\item Alle Wörter bilden und zählen\\
-oder
-\item Stelle Paritycheckmatrix auf und bestimme d
-\end{enumerate}
-\end{itemize}
-\item Falls Paritycheckmatrix gegeben:
-\begin{itemize}
-\item $P \in \mathbb{K}^{n~x~k} \Rightarrow k = n -rg(P) \Rightarrow (n,k)$-Code
-\item Bestimme d
-\end{itemize}
-\end{enumerate}
+    \begin{enumerate}
+    \item Falls Generatormatrix gegeben:
+        \begin{itemize}
+        \item $G \in \mathbb{K}^{n \times k} \Rightarrow (n,k)$-Code
+        \item d (Minimalabstand der Paritycheckmatrix)
+            \begin{enumerate}
+            \item Alle Wörter bilden und zählen\\
+            oder
+            \item Stelle Paritycheckmatrix auf und bestimme d
+            \end{enumerate}
+        \end{itemize}
+    \item Falls Paritycheckmatrix gegeben:
+        \begin{itemize}
+        \item $P \in \mathbb{K}^{n~x~k} \Rightarrow k = n -rg(P) \Rightarrow (n,k)$-Code
+        \item Bestimme d
+        \end{itemize}
+    \end{enumerate}
 
 
 \subsubsection{Bestimmung des Minimalabstandes der Paritycheckmatrix}
@@ -1052,18 +1052,18 @@ $d = 3$ & P hat \underline{keine} Nullspalte, P hat  \underline{keine zwei} line
 \end{tabular}
 
 \subsubsection{Überprüfe ob das Codewort c geschickt wurde}
-\begin{enumerate}
-\item Berechne $ P \cdot c $\\
-Falls $ P \cdot c = 0 \Rightarrow $ wurde wahrscheinlich gesendet\\
-Falls $ P \cdot c \neq 0 \Rightarrow $ b) + c)
-\item Finde $f \in \mathbb{K}^n $ mit $P \cdot f = P \cdot c$, wobei f möglichst wenige Nicht-Nulleinträge haben soll\\
-$\Rightarrow$ Wie muss man das Codewort ändern, damit 0 rauskommt.
-$\Rightarrow$ 
-$\Rightarrow$ Starte mit den Standardvektoren $ = $ Spalten der Paritycheckmatrix\\
-$\Rightarrow$ dann vielfache der Standardvektoren\\
-$\Rightarrow$ dann Linearkombinationen des Spalten von P
-\item $\Rightarrow c' = c - f$ wurde wahrscheinlich gesendet
-\end{enumerate}
+    \begin{enumerate}
+    \item Berechne $ P \cdot c $\\
+    Falls $ P \cdot c = 0 \Rightarrow $ wurde wahrscheinlich gesendet\\
+    Falls $ P \cdot c \neq 0 \Rightarrow $ b) + c)
+    \item Finde $f \in \mathbb{K}^n $ mit $P \cdot f = P \cdot c$, wobei f möglichst wenige Nicht-Nulleinträge haben soll\\
+    $\Rightarrow$ Wie muss man das Codewort ändern, damit 0 rauskommt.
+    $\Rightarrow$ 
+    $\Rightarrow$ Starte mit den Standardvektoren $ = $ Spalten der Paritycheckmatrix\\
+    $\Rightarrow$ dann vielfache der Standardvektoren\\
+    $\Rightarrow$ dann Linearkombinationen des Spalten von P
+    \item $\Rightarrow c' = c - f$ wurde wahrscheinlich gesendet
+    \end{enumerate}
 
 \subsubsection{Sonstige}
 
@@ -1100,13 +1100,13 @@ Prüfe (immer), ob $A \cdot A^{-1} = Id$
 \end{Notiz}
 
 \begin{Notiz}
-Eine Matrix ist invertierbar, wenn $det(A) \neq 0$.
+    Eine Matrix ist invertierbar, wenn $det(A) \neq 0$.
 \end{Notiz}
 \begin{Notiz}[Umkehrabbildung]
-Das Inverse einer Matrix wird für die Umkehrabbildung verwendet:
-\begin{align*}
-\varphi_A^{-1} = \varphi_{A}
-\end{align*}
+    Das Inverse einer Matrix wird für die Umkehrabbildung verwendet:
+    \begin{align*}
+    \varphi_A^{-1} = \varphi_{A}
+    \end{align*}
 \end{Notiz}
 
 \subsection{Lineare Abbildungen (2)}
@@ -1128,19 +1128,19 @@ VR-Isomorphismus bildet Basen auf Basen ab.
 \end{Notiz}
 \item Injektivität / Surjektivität / Bijektivität\\
 $\varphi : V \rightarrow W$
-\begin{enumerate}
-\item injektiv, falls aus $\varphi (v) = \varphi (w) $ folgt $ v = w ~~~~~~ (\varphi (v - w) = 0)$
-\item surjektiv, falls $\varphi (v) = w$
-\item bijektiv, falls injektiv und surjektiv\\
-\begin{Notiz}
-$\varphi $ ist injektiv $\Leftrightarrow dim (Kern) \ngeq 1$ \\ 
-$\varphi $ ist injektiv $\Leftrightarrow Kern(\varphi) = \{0\}$ \\
-$\varphi $ ist surjektiv $\Leftrightarrow dim (Bild(\varphi)) = dim(W) = rg(A)$, letzter Schritt gilt, falls $\varphi = \varphi_A$ 
-\end{Notiz}
-\end{enumerate}
-\item Dimensionssatz: \\
-$\varphi : V \rightarrow W$ linear\\
-$dim(V) = dim(Kern (\varphi)) + dim(Bild(\varphi)) ~~~~~~~ dim(V) < \infty$
+    \begin{enumerate}
+    \item injektiv, falls aus $\varphi (v) = \varphi (w) $ folgt $ v = w ~~~~~~ (\varphi (v - w) = 0)$
+    \item surjektiv, falls $\varphi (v) = w$
+    \item bijektiv, falls injektiv und surjektiv\\
+    \begin{Notiz}
+    $\varphi $ ist injektiv $\Leftrightarrow dim (Kern) \ngeq 1$ \\ 
+    $\varphi $ ist injektiv $\Leftrightarrow Kern(\varphi) = \{0\}$ \\
+    $\varphi $ ist surjektiv $\Leftrightarrow dim (Bild(\varphi)) = dim(W) = rg(A)$, letzter Schritt gilt, falls $\varphi = \varphi_A$ 
+    \end{Notiz}
+    \end{enumerate}
+    \item Dimensionssatz: \\
+    $\varphi : V \rightarrow W$ linear\\
+    $dim(V) = dim(Kern (\varphi)) + dim(Bild(\varphi)) ~~~~~~~ dim(V) < \infty$
 \end{enumerate}
 
 \subsection{Wann ist eine Menge eine Basis?}
@@ -1245,24 +1245,24 @@ ist. Dies geht also für $i = 1,2,4$
 
 \begin{enumerate}
 \item $v_1 = \frac{1}{2}v - \frac{1}{2}v_2 + \frac{1}{2} v_4$\\
-$i=1~~~~v_1, v_2, v_3, v_4 \in <~B_1~> = <~ \frac{1}{2}v - \frac{1}{2} + \frac{1}{2} v_4, v_2, v_3, v_4 ~>$
-
-
-$\Rightarrow B_1$ ist EZS der Länge $4 = dim(V)$ von $V$, also ist $B_1$ eine Basis
+    $i=1~~~~v_1, v_2, v_3, v_4 \in <~B_1~> = <~ \frac{1}{2}v - \frac{1}{2} + \frac{1}{2} v_4, v_2, v_3, v_4 ~>$
+    
+    
+    $\Rightarrow B_1$ ist EZS der Länge $4 = dim(V)$ von $V$, also ist $B_1$ eine Basis
 \item $v_2 = v - 2v_1 + v_4$\\
-$i=2~~~~v_1, v_2, v_3, v_4 \in \left< B_2 \right> = \left< v_1, v - 2v_1 + v_4, v_3, v_4 \right>$
-
-
-$\Rightarrow B_2$ ist EZS der Länge $4 = dim(V)$ von $V$, also ist $B_2$ eine Basis
+    $i=2~~~~v_1, v_2, v_3, v_4 \in \left< B_2 \right> = \left< v_1, v - 2v_1 + v_4, v_3, v_4 \right>$
+    
+    
+    $\Rightarrow B_2$ ist EZS der Länge $4 = dim(V)$ von $V$, also ist $B_2$ eine Basis
 \item $i=3~~~~v_3 \notin \left< B_3 \right> = \left< v_1, v_2, v_3, v_4 \right>$
 
 
-$\Rightarrow B_3$ ist kein EZS von $V$, also auch keine Basis
+    $\Rightarrow B_3$ ist kein EZS von $V$, also auch keine Basis
 \item $v_4 = -v + 2v_1 + v_2$\\
-$i=4~~~~v_1, v_2, v_3, v_4 \in \left< B_4 \right> = \left< v_1, v_2, v_3, -v + 2v_1 + v_2 \right>$
-
-
-$\Rightarrow B_4$ ist EZS der Länge $4 = dim(V)$ von $V$, also ist $B_4$ eine Basis
+    $i=4~~~~v_1, v_2, v_3, v_4 \in \left< B_4 \right> = \left< v_1, v_2, v_3, -v + 2v_1 + v_2 \right>$
+    
+    
+    $\Rightarrow B_4$ ist EZS der Länge $4 = dim(V)$ von $V$, also ist $B_4$ eine Basis
 \end{enumerate}
 \end{Beispiel}
 
@@ -1298,23 +1298,23 @@ Sei $B=\{b_1, \dots, b_n\}$ Basis von $V_j ~~~ C:= \{c_1, \dots, c_m\}$ Basis vo
 \begin{enumerate}
 \item Bestimme die Darstellungsmatrix $D_{B,C} (\varphi) : $ siehe oben
 \item Bestimme den Kern und das Bild der Matrix $D_{B,C}(\varphi)$
-\begin{itemize}
-\item Kern $D_{B,C}(\varphi) = \left< v_1, \dots, v_p \right>$
-\item Bild $B_{B,C}(\varphi) = \left< w_1, \dots, w_q \right>$
-\item Urbild: Löse 
-\[U := \{x \in \mathbb{K}^n | D_{B,C}(\varphi) \cdot x = (u) c ??????\} = U = \{v + a_1v_1 + \dots + a_ov_o | a_i \in \mathbb{K}\}\]
-\item 
-\begin{itemize}
-\item Kern $\varphi = \left< (v_1)_B, (v_2)_B, \dots, (v_p)_B \right> = \left<v_1, v_2, \dots, v_p \right>$
-\begin{Notiz}
-$ = $ sei definiert als "`Übersetze die Basisdarstellung zurück in die natürliche Darstellung von $V_i$ "'
+    \begin{itemize}
+    \item Kern $D_{B,C}(\varphi) = \left< v_1, \dots, v_p \right>$
+    \item Bild $B_{B,C}(\varphi) = \left< w_1, \dots, w_q \right>$
+    \item Urbild: Löse 
+    \[U := \{x \in \mathbb{K}^n | D_{B,C}(\varphi) \cdot x = (u) c ??????\} = U = \{v + a_1v_1 + \dots + a_ov_o | a_i \in \mathbb{K}\}\]
+    \item 
+    \begin{itemize}
+    \item Kern $\varphi = \left< (v_1)_B, (v_2)_B, \dots, (v_p)_B \right> = \left<v_1, v_2, \dots, v_p \right>$
+    \begin{Notiz}
+    $ = $ sei definiert als "`Übersetze die Basisdarstellung zurück in die natürliche Darstellung von $V_i$ "'
 
-(z.B. von Vektor $\rightarrow$ Matrix, von Vektor $\rightarrow$ Polynom,von Vektor $\rightarrow$ Funktion)
-\end{Notiz}
-\item Bild $\varphi = \left< (w_1)_c, (w_2)_c, \dots, (w_q)_c \right>\overset{zurueckuebersetzen}{=} \left<w_1, w-2, \dots, w_q \right>$
-\item Urbild $\varphi^{-1}(v) = \{(v)_B + a_1 \cdot (v_1)_B + \dots + a_o(v_o)_B \} \overset{zurueckuebersetzen}{=} \{v + a_1 \cdot v_1 + \dots + a_ov_o\}$
-\end{itemize}
-$\Rightarrow dim(Kern \varphi) = dim(Kern~~ D_{B,C}(\varphi))$
+    (z.B. von Vektor $\rightarrow$ Matrix, von Vektor $\rightarrow$ Polynom,von Vektor $\rightarrow$ Funktion)
+    \end{Notiz}
+    \item Bild $\varphi = \left< (w_1)_c, (w_2)_c, \dots, (w_q)_c \right>\overset{zurueckuebersetzen}{=} \left<w_1, w-2, \dots, w_q \right>$
+    \item Urbild $\varphi^{-1}(v) = \{(v)_B + a_1 \cdot (v_1)_B + \dots + a_o(v_o)_B \} \overset{zurueckuebersetzen}{=} \{v + a_1 \cdot v_1 + \dots + a_ov_o\}$
+    \end{itemize}
+    $\Rightarrow dim(Kern \varphi) = dim(Kern~~ D_{B,C}(\varphi))$
 \end{itemize}
 \end{enumerate}
 
@@ -1322,38 +1322,38 @@ $\Rightarrow dim(Kern \varphi) = dim(Kern~~ D_{B,C}(\varphi))$
 \subsection{Basiswechselmatrix $S_{C,B}$}
 
 \begin{Def}
-"`Koordinaten in C"' $ = S_{C,B} \cdot $ "`Koordinaten in B"'
-\begin{align*}
-S_{C,B} &= D_{B,C}(id)\\
-&~ \\
-S_{B,C} &= S_{C,B}^{-1}
-\end{align*}
-\begin{Notiz}
-Bei der Basiswechselmatrix heißt $C,B$ dass zu C gewechselt wird. Bei der Darstellungsmatrix steht $B,C$ für das man die Aktion einer linearen Abbildung bezüglich der Basisdarstellung B betrachtet und was als Ergebnis in Basisdarstellung von $C$ dabei herauskommt
-\end{Notiz}
+  "`Koordinaten in C"' $ = S_{C,B} \cdot $ "`Koordinaten in B"'
+  \begin{align*}
+  S_{C,B} &= D_{B,C}(id)\\
+  &~ \\
+  S_{B,C} &= S_{C,B}^{-1}
+  \end{align*}
+  \begin{Notiz}
+  Bei der Basiswechselmatrix heißt $C,B$ dass zu C gewechselt wird. Bei der Darstellungsmatrix steht $B,C$ für das man die Aktion einer linearen Abbildung bezüglich der Basisdarstellung B betrachtet und was als Ergebnis in Basisdarstellung von $C$ dabei herauskommt
+  \end{Notiz}
 \end{Def}
 
 
 
 \begin{Def}
-Sei $\varphi : V \rightarrow W $ linear und $B,B'$ sind Basen von $V,~~~ C, C'$ sind Basen von W
-\begin{align*}
-D_{B',C'}(\varphi) = S_{C', C} \cdot D_{B,C} (\varphi) \cdot S_{B,B'}
-\end{align*}
+  Sei $\varphi : V \rightarrow W $ linear und $B,B'$ sind Basen von $V,~~~ C, C'$ sind Basen von W
+  \begin{align*}
+  D_{B',C'}(\varphi) = S_{C', C} \cdot D_{B,C} (\varphi) \cdot S_{B,B'}
+  \end{align*}
 \end{Def}
 
 \begin{Def}
-Sei $\varphi : V \rightarrow W $ linear und $B,B'$ sind Basen von $V$
-\begin{align*}
-D_{B'}(\varphi) = S_{B',B} \cdot D_B(\varphi) \cdot S_{B,B'} = S_{B,B'}^{-1} \cdot D_B(\varphi) \cdot S_{B,B'}
-\end{align*}
-\begin{Notiz}
-$D_{B'}$ steht für $D_{B', B'}$
-\end{Notiz}
+  Sei $\varphi : V \rightarrow W $ linear und $B,B'$ sind Basen von $V$
+  \begin{align*}
+  D_{B'}(\varphi) = S_{B',B} \cdot D_B(\varphi) \cdot S_{B,B'} = S_{B,B'}^{-1} \cdot D_B(\varphi) \cdot S_{B,B'}
+  \end{align*}
+  \begin{Notiz}
+  $D_{B'}$ steht für $D_{B', B'}$
+  \end{Notiz}
 \end{Def}
 
 \begin{Def}
-Falls $E$ die Einheitsbasis ist, dann ist $S_{E,B}$ immer gleich $S_{E,B} = (b_1|b_2|\dots | b_n)$
+  Falls $E$ die Einheitsbasis ist, dann ist $S_{E,B}$ immer gleich $S_{E,B} = (b_1|b_2|\dots | b_n)$
 \end{Def}
 
 \textbf{Algorithmus für $S_{C,B}$:}
@@ -1380,17 +1380,17 @@ Falls $E$ die Einheitsbasis ist, dann ist $S_{E,B}$ immer gleich $S_{E,B} = (b_1
 \subsection{Determinanten}
 
 \begin{Notiz}
-$A$ ist invertierbar $\Leftrightarrow rg(A) = n \Leftrightarrow det(A) \neq 0$
+  $A$ ist invertierbar $\Leftrightarrow rg(A) = n \Leftrightarrow det(A) \neq 0$
 \end{Notiz}
 
 Die Abbildung $det : \mathbb{K}^{n~x~m} \rightarrow \mathbb{K} $ ist wie folgt definiert: 
 \begin{enumerate}
 \item Falls $ A = 
 \begin{pmatrix} 
-	a_1 &  &  & * \\
-	& a_2 &  &  \\
-	&  & \ddots &  \\
-	0 &  &  & a_n
+a_1 &  &  & * \\
+ & a_2 &  &  \\
+ &  & \ddots &  \\
+0 &  &  & a_n
 \end{pmatrix} \Rightarrow det(A) = a_1 \cdot a_2 \cdot ... \cdot a_n$ 
 \item Falls die Matrix $B$ sich aus $A$ ergibt, indem man zwei Zeilen oder Spalten vertauscht, dann ist $det(B) = - det(B)$.
 \item Falls $B$ sich aus $A$ ergibt, indem man ein Vielfaches einer Zeile oder Spalte zu einer \underline{anderen} Zeile oder Spalte addiert, dann ist $det(A) = det(B)$.
@@ -1413,10 +1413,10 @@ Und siehe \linkTo{Sarrus-Regel}
 \begin{Notiz}
 Schachbrettmuster: $
 \begin{pmatrix}
-	+ & - & + & - \\
-	- & + & - & + \\
-	+ & - & + & - \\
-	- & + & - & +
++ & - & + & - \\
+- & + & - & + \\
++ & - & + & - \\
+- & + & - & +
 \end{pmatrix}
 $
 \end{Notiz}
@@ -1434,28 +1434,28 @@ $
 
 \subsection{Kern einer Abbildung}
 
-Abbildung $\varphi: x \rightarrow Ax$
+Abbildung \(\varphi: x \rightarrow Ax\)
 \begin{enumerate}[label={(\arabic*)}]
-\item Matrix $A$ mit \linkToRef[Gauss]{Gauß} auf Zeilenstufenform bringen
-\item $dim(Kern(A)) = rg(A)$t
-\item Finde Vektoren die Multipliziert mit $A$ multipliziert 0 ergeben.
+    \item Matrix $A$ mit \linkToRef[Gauss]{Gauß} auf Zeilenstufenform bringen
+    \item $dim(Kern(A)) = rg(A)$
+    \item Finde Vektoren die Multipliziert mit $A$ multipliziert 0 ergeben.
 \end{enumerate}
 
 \begin{Beispiel}
-\begin{align*}
-A &= \begin{pmatrix} 1 & 0 & 2 & 1 \\
+    \begin{align*}
+        A &= \begin{pmatrix} 1 & 0 & 2 & 1 \\
 2 & 1 & 0  & 1 \\
 2 & 2 & -4 & 0
 \end{pmatrix}\\
-\begin{pmatrix} 1 & 0 & 2 & 1 \\
-2 & 1 & 0  & 1 \\
-2 & 2 & -4 & 0
-\end{pmatrix} &\rightsquigarrow \begin{pmatrix} 1 & 0 & 2 & 1 \\
-0 & 1 & -4  & -1 \\
-0 & 0 & 0 & 0
-\end{pmatrix}\\
-Kern(A) &= \left\{ \begin{pmatrix} -2 \\ -4 \\ 1 \\ 0 \end{pmatrix}, \begin{pmatrix} -1 \\ 1 \\ 0 \\ 1 \end{pmatrix} \right\}
-\end{align*}
+        \begin{pmatrix} 1 & 0 & 2 & 1 \\
+        2 & 1 & 0  & 1 \\
+        2 & 2 & -4 & 0
+        \end{pmatrix} &\rightsquigarrow \begin{pmatrix} 1 & 0 & 2 & 1 \\
+        0 & 1 & -4  & -1 \\
+        0 & 0 & 0 & 0
+        \end{pmatrix}\\
+        Kern(A) &= \left\{ \begin{pmatrix} -2 \\ -4 \\ 1 \\ 0 \end{pmatrix}, \begin{pmatrix} -1 \\ 1 \\ 0 \\ 1 \end{pmatrix} \right\}
+    \end{align*}
 \end{Beispiel}
 
 \section{Abkürzungen}
